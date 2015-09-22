@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleAlgorithms.Sort;
 
 namespace ConsoleApplication2
 {
@@ -26,7 +27,9 @@ namespace ConsoleApplication2
             //}
 
             //
-            IntroString.GetInputFromConsole();
+            //IntroString.GetInputFromConsole();
+            InsertionSort.PerformSort();
+
             Console.ReadKey();
         }
 
