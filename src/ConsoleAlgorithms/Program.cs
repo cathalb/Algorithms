@@ -28,7 +28,7 @@ namespace ConsoleApplication2
 
             //
             //IntroString.GetInputFromConsole();
-            InsertionSort.PerformSort();
+            InsertionSort2.PerformSort();
 
             Console.ReadKey();
         }
