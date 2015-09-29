@@ -29,13 +29,10 @@ namespace ConsoleAlgorithms.Sort
 
             for (var i = 1; i < ar.Length; i++)
             {
-                var shifted = false;
-
                 for (var k = i; k > 0; k--)
                 {
                     if (ar[k] < ar[k - 1])
                     {
-                        shifted = true;
                         var store = ar[k];
                         ar[k] = ar[k - 1];
                         ar[k - 1] = store;
@@ -43,7 +40,6 @@ namespace ConsoleAlgorithms.Sort
                     }
                 }
                 PrintArray(ar);
-                //if (shifted) shiftCount++;
             }
             Console.WriteLine(shiftCount);
             return shiftCount;
