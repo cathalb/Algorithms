@@ -7,6 +7,9 @@ namespace ConsoleAlgorithms.Tech
     internal class Calculation
     {
         private Stack<int> _numberStack;
+        private const char MultiplyOperator = '*';
+        private const short ErrorValue = -1;
+        private const char SumOperator = '+';
 
         public int Calculate(string toCalc)
         {
@@ -18,7 +21,7 @@ namespace ConsoleAlgorithms.Tech
                 {
                     _numberStack.Push(number);
                 }
-                else if (t == '+' || t == '*')
+                else if (t == SumOperator || t == MultiplyOperator)
                 {
                     var result = RunOperationOnStack(t);
                     if (result == -1) return result;
@@ -29,16 +32,16 @@ namespace ConsoleAlgorithms.Tech
 
         private int RunOperationOnStack(char operation)
         {
-            if (_numberStack.Count < 2) return -1;
+            if (_numberStack.Count < 2) return ErrorValue;
 
             var firstNumber = _numberStack.Pop();
             var secondNumber = _numberStack.Pop();
 
-            if (operation == '+')
+            if (operation == SumOperator)
             {
                 _numberStack.Push(firstNumber + secondNumber);
             }
-            if (operation == '*')
+            if (operation == MultiplyOperator)
             {
                 _numberStack.Push(firstNumber * secondNumber);
             }

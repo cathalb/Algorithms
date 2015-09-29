@@ -17,15 +17,15 @@ namespace ConsoleAlgorithms.Tech
             var result = 0;
             do
             {
-                if (aAsStack.Count > 0)
+                if (aAsStack.Any())
                 {
                     result = CalculateNewValue(result, aAsStack.Pop());
                 }
-                if (bAsStack.Count > 0 && result != -1)
+                if (bAsStack.Any() && result != -1)
                 {
                     result = CalculateNewValue(result, bAsStack.Pop());
                 }
-            } while (result != -1 && (aAsStack.Count > 0 || bAsStack.Count > 0));
+            } while (result != -1 && (aAsStack.Any() || bAsStack.Any()));
 
             return result;
         }
@@ -42,6 +42,12 @@ namespace ConsoleAlgorithms.Tech
         private static Stack<int> ConvertIntToStack(int a)
         {
             var aStack = new Stack<int>();
+            if (a == 0)
+            {
+                aStack.Push(a);
+                return aStack;
+            }
+
             for (var i = a; i > 0; i = i / 10)
             {
                 aStack.Push(i % 10);

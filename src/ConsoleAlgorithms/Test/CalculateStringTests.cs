@@ -24,6 +24,7 @@ namespace ConsoleAlgorithms.Test
         [TestCase("+", -1)]
         [TestCase("10+", 1)]
         [TestCase("01+", 1)]
+        [TestCase("13+62*7+*", 76)]
         public void CalculateStringTest(string str, int expected)
         {
             var calc = new Calculation();
